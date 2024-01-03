@@ -23,7 +23,8 @@ const BookShow = ({ book, onDelete, onSave }) => {
   return (
     <div className="inputvalue-wrapper">
       <img 
-        src={`https://picsum.photos/seed/${book.id}/200/300`}
+        src={`https://picsum.photos/seed/${book.id}/300/200`}
+        alt="book"
       />
       <div className="title-value">{titleContent}</div>
       <div className="nameinput-valu">{book.name}</div>
