@@ -3,9 +3,9 @@ import BookEdit from "./EditBook";
 const BookShow = ({ book, onDelete, onSave }) => {
   const [showEdit, setShowEdit] = useState(false);
 
-  const handleSubmit = (id, changeTitle) => {
+  const handleSubmit = (id, changeTitle, changeName) => {
     setShowEdit(false);
-    onSave(id, changeTitle);
+    onSave(id, changeTitle, changeName);
   };
 
   const handleDelete = () => {
@@ -15,7 +15,7 @@ const BookShow = ({ book, onDelete, onSave }) => {
     setShowEdit(!showEdit);
   };
 
-  let titleContent = <h2>{book.title}</h2>;
+  let titleContent = <div><h2>{book.title}</h2> <p>{book.name}</p></div>;
   if (showEdit) {
     titleContent = <BookEdit onSubmit={handleSubmit} book={book} />;
   }
@@ -27,7 +27,6 @@ const BookShow = ({ book, onDelete, onSave }) => {
         alt="book"
       />
       <div className="title-value">{titleContent}</div>
-      <div className="nameinput-valu">{book.name}</div>
       <div>
         <button onClick={handleEditClick}>Edit</button>
         <button onClick={handleDelete}>Delete</button>

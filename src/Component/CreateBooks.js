@@ -6,7 +6,7 @@ const BookCreate = ({ handleCreate }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleCreate(name, title);
+    handleCreate(title, name);
     setName("");
     setTitle("");
   };
@@ -14,18 +14,19 @@ const BookCreate = ({ handleCreate }) => {
     <div className="container">
       <div className="moveto-bottom">
       <form onSubmit={handleSubmit}>
-        <input
+      <input
           type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
           placeholder="Book Title"
         />
         <input
           type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="Author"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Autor"
         />
+       
         <button className="creat-button" type="submit">Add Book</button>
       </form>
       </div>

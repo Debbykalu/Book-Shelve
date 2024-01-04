@@ -2,21 +2,27 @@ import { useState } from "react";
 const BookEdit = ({ book, onSubmit }) => {
 
   const [changeTitle, setChangeTitle] = useState(book.title);
+  const [changeName, setChangeName] = useState(book.name);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(book.id, changeTitle);
+    onSubmit(book.id, changeTitle, changeName);
   };
-  
-  const handleChange = (e) => {
+
+  const handleTitleChange = (e) => {
     setChangeTitle(e.target.value);
+  };
+
+  const handleNameChange = (e) => {
+    setChangeName(e.target.value);
   };
 
   return (
     <div className="edit-title">
       <form onSubmit={handleSubmit}>
         <label>Title</label>
-        <input type="text" value={changeTitle} onChange={handleChange} />
+        <input type="text" value={changeTitle} onChange={handleTitleChange} />
+        <input type="text" value={changeName} onChange={handleNameChange} />
         <button>Save</button>
       </form>
     </div>
