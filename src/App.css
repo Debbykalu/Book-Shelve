@@ -8,8 +8,16 @@ body{
     width: 600px;
     box-shadow: 0 0 40px rgba(0,0,0,0.16);
     margin: 30px auto;
+    padding: 15px;
+}
+.app{
+    margin-top: 20px;
 }
 
+.app h2{
+    text-align: center;
+     font-size: 36px;
+}
 .container {
     position: relative;
     min-height: 100vh; /* Ensure the container takes at least the full height of the viewport */
@@ -46,6 +54,9 @@ body{
     border-radius: 5px;
     cursor: pointer;
   }
+  .container-wrapper{
+    display: flex;
+  }
   
   .inputvalue-wrapper {
     border: 1px solid #ddd;
@@ -54,7 +65,7 @@ body{
     margin: 15px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
-    width: 340px;
+    width: 240px;
   }
   
   .title-value {

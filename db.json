@@ -1,9 +1,14 @@
 {
   "books": [
     {
+      "title": "Dark Tower",
+      "name": "By Toyin Adebayomi",
+      "id": 2
+    },
+    {
       "title": "Harry Porter",
-      "name": "Debby Sinkalu",
-      "id": 1
+      "name": "By Debby Sconty",
+      "id": 3
     }
   ]
 }

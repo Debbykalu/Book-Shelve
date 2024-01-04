@@ -1,9 +1,11 @@
+import useBookContext from "../CustomHooks/UseBookContext";
 import BookShow from "./DisplayBook";
 
-const BooksList = ({ books, onDelete, onSave }) => {
+const BooksList = () => {
+  const {books} = useBookContext();
   const newBookListShow = books.map((book) => {
     return (
-      <BookShow onSave={onSave} key={book.id} book={book} onDelete={onDelete} />
+      <BookShow key={book.id} book={book} />
     );
   });
   return <div>{newBookListShow}</div>;

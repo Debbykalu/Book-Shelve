@@ -1,12 +1,16 @@
 import { useState } from "react";
+import useBookContext from "../CustomHooks/UseBookContext";
 const BookEdit = ({ book, onSubmit }) => {
 
   const [changeTitle, setChangeTitle] = useState(book.title);
   const [changeName, setChangeName] = useState(book.name);
 
+  const {editBookById} = useBookContext();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(book.id, changeTitle, changeName);
+    onSubmit();
+    editBookById(book.id, changeTitle, changeName)
   };
 
   const handleTitleChange = (e) => {

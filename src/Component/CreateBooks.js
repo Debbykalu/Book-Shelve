@@ -1,12 +1,16 @@
 import { useState } from "react";
+import useBookContext from "../CustomHooks/UseBookContext";
 
-const BookCreate = ({ handleCreate }) => {
+
+const BookCreate = () => {
   const [name, setName] = useState("");
   const [title, setTitle] = useState("");
 
+  const {createBook} = useBookContext();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleCreate(title, name);
+    createBook(title, name);
     setName("");
     setTitle("");
   };

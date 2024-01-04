@@ -1,15 +1,18 @@
-import { useState } from "react";
+import {  useState } from "react";
 import BookEdit from "./EditBook";
-const BookShow = ({ book, onDelete, onSave }) => {
+import useBookContext from "../CustomHooks/UseBookContext";
+
+const BookShow = ({ book }) => {
   const [showEdit, setShowEdit] = useState(false);
 
-  const handleSubmit = (id, changeTitle, changeName) => {
-    setShowEdit(false);
-    onSave(id, changeTitle, changeName);
+  const { deleteBookById } = useBookContext();
+
+  const handleSubmit = () => {
+    setShowEdit(false);;
   };
 
   const handleDelete = () => {
-    onDelete(book.id);
+    deleteBookById(book.id);
   };
   const handleEditClick = () => {
     setShowEdit(!showEdit);
@@ -21,9 +24,10 @@ const BookShow = ({ book, onDelete, onSave }) => {
   }
 
   return (
-    <div className="inputvalue-wrapper">
+   <div className="container-wrapper">
+     <div className="inputvalue-wrapper">
       <img 
-        src={`https://picsum.photos/seed/${book.id}/300/200`}
+        src={`https://picsum.photos/seed/${book.id}/200/100`}
         alt="book"
       />
       <div className="title-value">{titleContent}</div>
@@ -32,6 +36,7 @@ const BookShow = ({ book, onDelete, onSave }) => {
         <button onClick={handleDelete}>Delete</button>
       </div>
     </div>
+   </div>
   );
 };
 
